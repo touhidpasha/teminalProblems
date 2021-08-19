@@ -1,0 +1,60 @@
+1.
+a)cat /etc/passwd
+b)cat /etc/passwd | awk -F: '{print $1}'
+c)cat /etc/passwd | awk -F: '{if ($3>1000) print $1,$2,$3}'
+d)cat /etc/passwd | awk -F: '{if ($3>1000) print $6}'
+
+2.
+a)touch abc.txt def.txt ghi.txt jkl.txt
+b)ls *.txt
+c)ls *.txt | awk -F. '{print $1}'
+d)for file in `ls *.txt`; 
+    do folderName=`echo $file | awk -F. '{print $1}'`; 
+    mkdir $folderName; done
+e)for file in `ls *.txt`; 
+    do folderName=`echo $file | awk -F. '{print $1}'`;
+    rm -r $folderName; mkdir $folderName; 
+    mv $file $folderName; done
+
+3.
+a)touch abc.log.1 def.log.1 ghi.log.1 jkl.log.1 mno.log.1
+b)ls *.log.1
+c)ls *.log.1 | awk -F. '{print $1,$2,$3}'
+d)date
+
+4 
+a)ls -lt 
+
+5
+a)#!/bin/bash
+    if [ -e x.txt ]
+    then
+     echo "ok"
+    else
+    echo "nok"
+    fi
+b)
+#!/bin/bash
+    if [ -e x.txt ]
+    then
+     echo "folder already exist"
+    else
+    echo "not exist"
+    touch x,txt
+    fi
+
+6.a)Command 'hello' not found, but can be installed with:
+
+    sudo snap install hello
+b)ls
+
+7)a)printenv 
+    printenv PATH
+    b) env var="hello"
+
+8)cat  /var/log | grep "systemd"
+
+9) top
+
+10)cat /var/log/httpd/acces.log
+
